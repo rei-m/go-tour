@@ -9,13 +9,8 @@ func WordCount(s string) map[string]int {
 
     ret := make(map[string]int)
     slice := strings.Fields(s)
-    for i := 0; i < len(slice); i++ {
-        v, j := ret[slice[i]]
-        if j {
-          ret[slice[i]] += v
-        }else{
-          ret[slice[i]] = 1
-        }
+    for _, v := range slice {
+        ret[v] += 1
     }
     return ret
 }
